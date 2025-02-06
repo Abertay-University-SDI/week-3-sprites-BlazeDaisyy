@@ -5,24 +5,20 @@
 #include "Framework/Input.h"
 #include "Framework/GameObject.h"
 #include <string.h>
-#include "Player.h"
 #include <iostream>
 
 
-class Level : BaseLevel {
+class Player : public GameObject {
 public:
-	Level(sf::RenderWindow* hwnd, Input* in);
-	~Level();
+	Player();
+	~Player();
 
 	void handleInput(float dt) override;
 	void update(float dt) override;
-	void render() override;
 
 private:
-	// Level objects
-	GameObject testSprite;
-	sf::Texture texture;
-	sf::Texture pTexture;
-
-	Player player;
+	// player attributes
+	
+	int num_lives;
+	float playerSpeed;
 };
